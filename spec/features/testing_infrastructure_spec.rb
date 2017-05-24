@@ -1,15 +1,11 @@
-require '../app.rb'
+require './app.rb'
 
-# describe Battle, :type => :feature do
-#   it 'checks that the Testing Infrastructure working' do
-#     visit '/'
-#     expect(page).to have_content 'Testing Infrastructure working'
-#   end
-# end
-
-feature 'Testing Infrastructure' do
-  scenario 'Can run app and check page content' do
+feature 'Start a fight' do
+  scenario 'Can enter name and submit' do
     visit '/'
-      expect(page).to have_content 'Testing Infrastructure working'
+    fill_in "player1", :with => "Sally"
+    fill_in "player2", :with => "Geoff"
+    click_button "Fight!"
+    expect(page).to have_content("Sally vs Geoff")
   end
 end
