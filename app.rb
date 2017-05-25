@@ -18,7 +18,7 @@ get '/play' do
   erb :play
 end
 
-post '/attack' do
+get '/attack' do
   erb :attack
 end
 
