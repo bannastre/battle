@@ -1,3 +1,3 @@
 # Battle! #
 
-Where two players fight to a digital death
+## Where two players fight to a digital death  ##
