@@ -8,10 +8,6 @@ class Player
     @hit_points = 60
   end
 
-  def attack(player, damage = 10)
-    player.take_hit(damage)
-  end
-
   def take_hit(damage)
     reduce_hp(damage)
   end
