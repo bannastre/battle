@@ -18,5 +18,9 @@ get '/play' do
   erb :play
 end
 
+post '/attack' do
+  erb :attack
+end
+
   run! if app_file ==$0
 end

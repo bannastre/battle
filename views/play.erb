@@ -1,4 +1,6 @@
 <h1><%= session['player1'] %> vs <%= session['player2'] %></h1>
 <p><%= session['player2'] %>: 60/60 HP</p>
 
-
+<form action='/attack' method='post'>
+  <input type='submit' value='Attack!'>
+</form>
