@@ -28,5 +28,10 @@ get '/attack' do
   erb :attack
 end
 
+post '/switch_players' do
+  $game.switch_players
+  redirect to('/play')
+end
+
 run! if app_file == $0
 end

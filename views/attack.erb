@@ -1,4 +1,10 @@
-
 <h1><%= @game.players[0].name %> attacked <%= @game.players[1].name %></h1>
 
+<h3><%= @game.players[0].name %>'s turn</h3>
+<p><%= @game.players[0].name %>: <%= @game.players[0].hit_points %>/60 HP</p>
+
 <p><%= @game.players[1].name %>: <%= @game.players[1].hit_points %>/60 HP</p>
+
+<form action='/switch_players' method='post'>
+  <input type='submit' value='Defend!'>
+</form>
