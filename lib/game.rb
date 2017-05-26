@@ -13,4 +13,8 @@ class Game
     @players.reverse!
   end
 
+  def game_over?
+    @players.select { |player| player.hit_points == 0 }.any?
+  end
+
 end

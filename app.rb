@@ -22,9 +22,17 @@ get '/play' do
   erb :play
 end
 
+post '/attack' do
+  $game.attack
+  if $game.game_over?
+    redirect to '/game_over'
+  else
+    redirect to '/attack'
+  end
+end
+
 get '/attack' do
   @game = $game
-  @game.attack
   erb :attack
 end
 
@@ -32,6 +40,12 @@ post '/switch_players' do
   $game.switch_players
   redirect to('/play')
 end
+
+get '/game_over' do
+  @game = $game
+  erb :game_over
+end
+
 
 run! if app_file == $0
 end
