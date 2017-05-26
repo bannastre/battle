@@ -1,6 +1,6 @@
 require 'sinatra/base'
-require './lib/player'
 require './lib/game'
+require './lib/player'
 
 class Battle < Sinatra::Base
 
@@ -28,5 +28,5 @@ get '/attack' do
   erb :attack
 end
 
-run! if app_file ==$0
+run! if app_file == $0
 end

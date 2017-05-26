@@ -1,5 +1,4 @@
 class Game
-
   attr_reader :players
 
   def initialize(player1, player2)
