@@ -24,4 +24,10 @@ describe Game do
     end
   end
 
+  describe '#switch player' do
+    it 'switches players' do
+      expect { game.switch_players }.to change { game.players }.to game.players.reverse!
+    end
+  end
+
 end

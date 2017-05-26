@@ -17,4 +17,8 @@ class Game
     opponent.receive_damage
   end
 
+  def switch_players
+    @players.reverse!
+  end
+
 end
