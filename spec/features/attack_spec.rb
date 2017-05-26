@@ -13,9 +13,10 @@ feature 'Attacking' do
     expect(page).to have_content("60/60 HP")
   end
 
-  scenario "Player 2's hit_points are reduced when attacked" do
+  scenario 'reduce Player2 hit points by 10' do
     sign_in_and_play
     click_link('Attack!')
+    expect(page).not_to have_content("Geoff: 60/60 HP")
     expect(page).to have_content("Geoff: 50/60 HP")
   end
 

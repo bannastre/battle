@@ -3,19 +3,13 @@ class Player
 
   attr_reader :name, :hit_points
 
-  def initialize(name)
+  def initialize(name, hit_points=60)
     @name = name
-    @hit_points = 60
+    @hit_points = hit_points
   end
 
-  def take_hit(damage)
-    reduce_hp(damage)
-  end
-
-  private
-
-  def reduce_hp(damage)
-    @hit_points -= damage
+  def receive_damage
+    @hit_points -= 10
   end
 
 end

@@ -10,10 +10,15 @@ describe Player do
     end
   end
 
-  describe '#take_hit' do
-    it 'reduces hit points when attacked' do
-      player1.take_hit(10)
-      expect(player1.hit_points).to eq 50
+  describe '#hit_points' do
+    it 'returns the hit points' do
+      expect(player1.hit_points).to eq 60
+    end
+  end
+
+  describe '#receive_damage' do
+    it 'reduces the player hit points' do
+      expect { player2.receive_damage }.to change { player2.hit_points }.by(-10)
     end
   end
 
