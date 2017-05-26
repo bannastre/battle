@@ -13,18 +13,21 @@ end
 post '/names' do
   player1 = Player.new(params[:player1])
   player2 = Player.new(params[:player2])
-  $game = Game.new(player1, player2)
+  @game = Game.create(player1, player2)
   redirect to('/play')
 end
 
+before do
+  @game = Game.instance
+end
+
 get '/play' do
-  @game = $game
   erb :play
 end
 
 post '/attack' do
-  $game.attack
-  if $game.game_over?
+  @game.attack
+  if @game.game_over?
     redirect to '/game_over'
   else
     redirect to '/attack'
@@ -32,20 +35,17 @@ post '/attack' do
 end
 
 get '/attack' do
-  @game = $game
   erb :attack
 end
 
 post '/switch_players' do
-  $game.switch_players
+  @game.switch_players
   redirect to('/play')
 end
 
 get '/game_over' do
-  @game = $game
   erb :game_over
 end
-
 
 run! if app_file == $0
 end
