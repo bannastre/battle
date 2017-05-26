@@ -5,16 +5,8 @@ class Game
     @players = [player1, player2]
   end
 
-  def player1
-    @players.first
-  end
-
-  def player2
-    @players.last
-  end
-
-  def attack(opponent)
-    opponent.receive_damage
+  def attack
+    @players[1].receive_damage
   end
 
   def switch_players

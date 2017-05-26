@@ -7,20 +7,20 @@ describe Game do
 
   describe '#player1' do
     it 'retrieves the first player' do
-      expect(game.player1).to eq game.player1
+      expect(game.players[0]).to eq game.players[0]
     end
   end
 
   describe '#player_2' do
     it 'retrieves the second player' do
-      expect(game.player2).to eq game.player2
+      expect(game.players[1]).to eq game.players[1]
     end
   end
 
   describe '#attack' do
     it 'damages the player' do
-      expect(game.player2).to receive(:receive_damage)
-      game.attack(game.player2)
+      expect(game.players[1]).to receive(:receive_damage)
+      game.attack
     end
   end
 

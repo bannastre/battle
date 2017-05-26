@@ -1,4 +1,4 @@
 
-<h1><%= @game.player1.name %> attacked <%= @game.player2.name %></h1>
+<h1><%= @game.players[0].name %> attacked <%= @game.players[1].name %></h1>
 
-<p><%= @game.player2.name %>: <%= @game.player2.hit_points %>/60 HP</p>
+<p><%= @game.players[1].name %>: <%= @game.players[1].hit_points %>/60 HP</p>
